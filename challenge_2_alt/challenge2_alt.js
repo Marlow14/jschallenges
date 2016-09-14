@@ -44,6 +44,9 @@
  	var swish = new Audio();
  	swish.src = "Swish+2.mp3"
 
+ 	var backboard = new Audio();
+ 	backboard.src = "Back+Board.mp3"
+
 //Tests value to console
  	console.log(resCount);
 
@@ -62,7 +65,7 @@
 		$("#teamtwo-numshots").text(tmTwoShotNum);
 		$("#teamtwo-numhits").text(tmTwoGoal);
 
- 		swish.play();
+ 		crowd.play();
  	});
 
 //Team one shot attempts 		
@@ -76,12 +79,14 @@
 
  			$("#teamone-numhits").text(tmOneGoal);
 			$( "body" ).css( "background-color", "red" );
-			crowd.play();
+			swish.play();
  		}else{
 			tmOneShotNum++
 			$("body").css("background-color", "white");
+			backboard.play();
  		}
  		$("#teamone-numshots").text(tmOneShotNum);
+
  	});
 
 	$( "#teamtwo-shoot" ).click(function(){
@@ -92,10 +97,11 @@
 			tmTwoShotNum++
 			$("#teamtwo-numhits").text(tmTwoGoal);
 	  		$( "body" ).css( "background-color", "blue" );
-	  		crowd.play();
+	  		swish.play();
   		}else{
   			tmTwoShotNum++
 			$("body").css("background-color", "white");
+			backboard.play();
   		}
   		$("#teamtwo-numshots").text(tmTwoShotNum);
 	});
