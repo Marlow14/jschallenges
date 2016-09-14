@@ -76,6 +76,11 @@
 		if (teamOneAttempt % 2 == 0){
  			tmOneGoal++
  			tmOneShotNum++
+ 			
+ 			$(".left").prepend("<img id='make' src='http://www.bcsc.k12.in.us/cms/lib/IN01000842/Centricity/Domain/2065/_SMPIMG_small_basketball4.jpg'/>");		
+ 			$("#make").on('mouseleave', function(){
+ 				$("#make").remove();
+ 			})
 
  			$("#teamone-numhits").text(tmOneGoal);
 			$( "body" ).css( "background-color", "red" );
@@ -83,6 +88,9 @@
  		}else{
 			tmOneShotNum++
 			$("body").css("background-color", "white");
+
+			// $(".left").prepend("<img id='miss' src='https://s-media-cache-ak0.pinimg.com/236x/b7/4c/b1/b74cb1828c8556e89ef52b32d32594b2.jpg'/>")
+
 			backboard.play();
  		}
  		$("#teamone-numshots").text(tmOneShotNum);
@@ -93,10 +101,16 @@
 		var teamTwoAttempt = Math.floor(Math.random()*6);
 
 		if (teamTwoAttempt % 2 == 0){
+
 			tmTwoGoal++
 			tmTwoShotNum++
+
 			$("#teamtwo-numhits").text(tmTwoGoal);
 	  		$( "body" ).css( "background-color", "blue" );
+
+			$(".right").prepend("<img id='make' src='http://www.bcsc.k12.in.us/cms/lib/IN01000842/Centricity/Domain/2065/_SMPIMG_small_basketball4.jpg'/>");
+ 			$("#make").slideToggle("slow").dequeue();
+
 	  		swish.play();
   		}else{
   			tmTwoShotNum++
@@ -105,4 +119,7 @@
   		}
   		$("#teamtwo-numshots").text(tmTwoShotNum);
 	});
+
+
+
  })
