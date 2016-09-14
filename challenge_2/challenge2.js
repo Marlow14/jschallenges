@@ -17,8 +17,12 @@ $(function(){
 // (2) Hide every odd list element
   	$("h5:odd").hide();
 
-// (3)
-	$("p").text($("p").text().replace("bacon", "Laser Vison"));
+// (3) Change every word Bacon to LASER
+//	$("p").text($("aside p").text().replace("Bacon", "Laser Vison"));
+
+$("p").text(function(i, text) {
+    return text.replace("Bacon", "LASER");
+});
 
 // (4)
 	$(".row.post:gt(3)").remove();
